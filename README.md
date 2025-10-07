@@ -1,3 +1,4 @@
+
 # Streamlit Prompt Runner
 
 ## Overview
@@ -80,3 +81,7 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 - Thanks to the Streamlit community for their support and resources.
 - Special thanks to all contributors who help improve this project.
+=======
+# prompt-runner
+Streamlit Prompt Runner is a lightweight, interactive web app built with Streamlit that allows users to input prompts, automatically generate structured JSON specifications using an integrated Design Agent, and visualize, log, and manage previous prompts with ease. 
+>>>>>>> 7114d4a9187792caa3991904e8f2a6a3eb072316
