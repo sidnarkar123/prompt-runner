@@ -46,5 +46,17 @@
     "action": "send_to_unreal",
     "spec_id": "29942d19",
     "details": {}
+  },
+  {
+    "timestamp": "2025-10-07T12:17:49.029710Z",
+    "action": "send_to_evaluator",
+    "spec_id": "29942d19",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-07T12:17:50.557664Z",
+    "action": "send_to_unreal",
+    "spec_id": "29942d19",
+    "details": {}
   }
 ]
