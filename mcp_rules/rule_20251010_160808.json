@@ -1,0 +1,6 @@
+{
+  "rule": "Building height <= 24m",
+  "clause_no": "DCPR 2034-12.3",
+  "conditions": "Residential zone",
+  "city": "Mumbai"
+}
