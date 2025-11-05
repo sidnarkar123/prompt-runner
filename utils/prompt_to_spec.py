@@ -1,3 +1,4 @@
+#prompt_to_spec.py
 def prompt_to_spec(prompt):
     """
     Converts a user prompt into a JSON spec (dummy examples)

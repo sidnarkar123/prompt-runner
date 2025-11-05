@@ -1,6 +1,71 @@
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.log
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables
 .env
+.env.local
+
+# Logs
+*.log
+logs/*.log
+
+# Generated outputs
+outputs/*.json
+reports/backups/*
+
+# Keep directories but ignore contents
+!outputs/geometry/.gitkeep
+!reports/.gitkeep
+!reports/backups/.gitkeep
+
+# GLB files (too large for git)
+*.glb
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Database dumps
+*.sql
+*.sqlite
+*.db
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/

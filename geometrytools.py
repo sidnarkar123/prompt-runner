@@ -1,3 +1,4 @@
+#geometrytools.py
 import trimesh
 import os
 

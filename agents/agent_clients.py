@@ -1,42 +1,57 @@
+# agents/agent_clients.py
 import requests
+from typing import List, Dict, Optional
+import logging
+import os
 
-MCP_BASE_URL = "http://localhost:5001/api/mcp"
+logging.basicConfig(level=logging.INFO)
+MCP_BASE = os.environ.get("MCP_BASE_URL", "http://127.0.0.1:5001/api/mcp")
 
-def save_rule(rule_json):
+def _post(path: str, payload: dict) -> Optional[dict]:
+    url = f"{MCP_BASE}{path}"
     try:
-        response = requests.post(f"{MCP_BASE_URL}/save_rule", json=rule_json)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        print(f"Error saving rule: {e}")
+        r = requests.post(url, json=payload, timeout=8)
+        r.raise_for_status()
+        return r.json()
+    except Exception as e:
+        logging.error("POST %s failed: %s", url, e)
         return None
 
-def get_rules(city):
+def _get(path: str) -> Optional[dict]:
+    url = f"{MCP_BASE}{path}"
     try:
-        response = requests.get(f"{MCP_BASE_URL}/list_rules")
-        response.raise_for_status()
-        all_rules = response.json().get("rules", [])
-        return [r for r in all_rules if r.get("city", "").lower() == city.lower()]
-    except requests.RequestException as e:
-        print(f"Error retrieving rules: {e}")
-        return []
-
-def send_feedback(case_id, feedback):
-    data = {"case_id": case_id, "feedback": feedback}
-    try:
-        response = requests.post(f"{MCP_BASE_URL}/feedback", json=data)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        print(f"Error sending feedback: {e}")
+        r = requests.get(url, timeout=8)
+        r.raise_for_status()
+        return r.json()
+    except Exception as e:
+        logging.error("GET %s failed: %s", url, e)
         return None
 
-def log_geometry(case_id, file_path):
-    data = {"case_id": case_id, "file": file_path}
-    try:
-        response = requests.post(f"{MCP_BASE_URL}/geometry", json=data)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        print(f"Error logging geometry: {e}")
-        return None
+# ---- Public APIs ----
+
+def save_rule(rule_json: dict) -> Optional[dict]:
+    return _post("/save_rule", rule_json)
+
+def list_rules() -> List[dict]:
+    res = _get("/list_rules")
+    return res.get("rules", []) if res else []
+
+def get_rules_for_city(city: str) -> List[dict]:
+    all_rules = list_rules()
+    return [r for r in all_rules if r.get("city", "").lower() == city.lower()]
+
+def send_feedback(case_id: str, feedback: str) -> Optional[dict]:
+    return _post("/feedback", {"case_id": case_id, "feedback": feedback})
+
+def log_geometry(case_id: str, file_path: str) -> Optional[dict]:
+    return _post("/geometry", {"case_id": case_id, "file": file_path})
+
+def upload_parsed_pdf(case_id: str, parsed_data: dict) -> Optional[dict]:
+    """
+    Push parsed PDF (JSON format) into MCP backend for storage.
+    """
+    payload = {
+        "case_id": case_id,
+        "parsed_data": parsed_data
+    }
+    return _post("/upload_parsed_pdf", payload)

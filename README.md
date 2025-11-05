@@ -1,87 +1,200 @@
-
 # Streamlit Prompt Runner
 
 ## Overview
 
-The **Streamlit Prompt Runner** is a web application designed to facilitate the interaction between users and automated agents through natural language prompts. The application allows users to input prompts, generate structured JSON specifications, and route these specifications to various agents for further processing. This project serves as a mini "Prompt-to-Agent" pipeline, ensuring transparency and traceability of user interactions.
+The **Streamlit Prompt Runner** is a web application for urban planning compliance checking with 3D visualization. It allows users to input prompts, generate structured JSON specifications, check building compliance against DCR regulations, and visualize buildings in 3D.
 
-## Project Structure
+---
+
+## ✨ Features
+
+- 🎨 **AI-Powered Design** - Natural language → JSON specifications
+- ✅ **Compliance Checking** - Multi-city DCR regulation validation
+- 🏗️ **3D Visualization** - Interactive GLB model viewer
+- 👍👎 **RL Feedback System** - Reinforcement learning from user feedback
+- 🌆 **Multi-City Support** - Mumbai, Ahmedabad, Pune, Nashik
+- 📊 **Complete Logging** - Prompt and action tracking
+- 🧪 **Tested** - 82 tests with 94% pass rate
+
+---
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# 1. Clone repository
+cd "C:\prompt runner\streamlit-prompt-runner"
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Start MongoDB (if not running)
+mongod
+
+# 4. Start MCP Server (Terminal 1)
+python mcp_server.py
+
+# 5. Start Streamlit App (Terminal 2)
+streamlit run main.py
+
+# 6. Open browser
+http://localhost:8501
+```
+
+---
+
+## 📋 Project Structure
 
 ```
 streamlit-prompt-runner/
-├── main.py                # Main entry point for the Streamlit application
-├── requirements.txt       # Lists project dependencies
-├── streamlit.toml         # Configuration settings for the Streamlit app
-├── prompts/               # Stores user prompt text files
-├── specs/                 # Stores JSON outputs from the design agent
-├── logs/                  # Contains log files for prompts and actions
-│   ├── prompt_logs.json   # Tracks all user prompts
-│   └── action_logs.json   # Logs all routing actions
-├── send_to_evaluator/     # Stores routed specs for the evaluator agent
-├── send_to_unreal/        # Stores routed specs for the Unreal Engine team
-├── agents/                # Contains agent implementations
-│   ├── design_agent.py    # Generates structured JSON from prompts
-│   ├── evaluator_agent.py  # Evaluates generated specifications
-│   └── unreal_agent.py     # Simulates sending specs to Unreal Engine
-├── components/            # Contains UI components
-│   └── ui.py              # Defines reusable UI components
-├── utils/                 # Contains utility functions
-│   └── io_helpers.py      # Helper functions for file I/O
-└── README.md              # Documentation for the project
+├── main.py                # Main Streamlit application
+├── mcp_server.py          # MCP Flask API server
+├── upload_rules.py        # Upload city rules to database
+├── requirements.txt       # Python dependencies
+│
+├── agents/                # AI Agents
+│   ├── design_agent.py    # Prompt → JSON spec
+│   ├── calculator_agent.py # Compliance checking
+│   ├── geometry_agent.py   # 3D generation
+│   └── rl_agent.py         # Reinforcement learning
+│
+├── components/            # UI Components
+│   ├── glb_viewer.py      # 3D GLB viewer
+│   └── ui.py              # UI helpers
+│
+├── utils/                 # Utilities
+│   ├── geometry_converter.py # JSON → GLB conversion
+│   └── io_helpers.py          # File operations
+│
+├── tests/                 # Test Suite (82 tests)
+│   ├── test_mcp.py
+│   ├── test_agents.py
+│   ├── test_geometry.py
+│   └── conftest.py
+│
+├── mcp_data/              # Data Storage
+│   └── rules.json         # 53 rules, 4 cities
+│
+└── outputs/geometry/      # Generated 3D models
 ```
 
-## Installation
+---
 
-To set up the project, follow these steps:
+## 🎯 Usage
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd streamlit-prompt-runner
-   ```
-
-2. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-
-3. Configure the Streamlit application (if necessary) in `streamlit.toml`.
-
-## Usage
-
-To run the application, execute the following command in your terminal:
-
+### **1. Design Studio**
+Enter a prompt:
 ```
-streamlit run main.py
+"Design a 7-story residential building in Mumbai with setback 3m"
+```
+Get structured JSON specification.
+
+### **2. Compliance Checker**
+- Select city (Mumbai/Ahmedabad/Pune/Nashik)
+- Enter building parameters
+- Check compliance against DCR regulations
+- Get pass/fail results
+
+### **3. 3D Viewer**
+- View generated GLB models
+- Interactive controls (rotate, zoom, pan)
+- Download 3D files
+
+### **4. Feedback System**
+- 👍 Positive feedback (+2 reward)
+- 👎 Negative feedback (-2 reward)
+- RL agent learns from feedback
+
+---
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=. --cov-report=html
+
+# Run specific test file
+pytest tests/test_geometry.py
 ```
 
-Once the application is running, you can:
+**Test Results**: 77/82 passed (94%)
 
-1. Enter a natural language prompt in the input field.
-2. Submit the prompt to generate a structured JSON specification.
-3. View past prompts and their corresponding JSON outputs in the log viewer.
-4. Route the generated specifications to the evaluator or Unreal Engine team as needed.
+---
 
-## Features
+## 🌆 Supported Cities
 
-- User-friendly interface for prompt submission and JSON viewing.
-- Integration with automated agents for generating and evaluating specifications.
-- Logging of all user interactions for transparency and review.
-- Ability to route specifications to different agents for further processing.
+| City | Authority | Rules | Status |
+|------|-----------|-------|--------|
+| Mumbai | MCGM | 42 | ✅ |
+| Ahmedabad | AMC | 3 | ✅ |
+| Pune | PMC | 4 | ✅ |
+| Nashik | NMC | 4 | ✅ |
 
-## Contributing
+**Total**: 53 rules
 
-Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
+---
 
-## License
+## 🔧 Configuration
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+### MCP Server
+- **Port**: 5001
+- **Database**: MongoDB
+- **Endpoints**:
+  - POST `/api/mcp/save_rule`
+  - GET `/api/mcp/list_rules`
+  - POST `/api/mcp/feedback`
+  - POST `/api/mcp/geometry`
 
-## Acknowledgments
+### Environment Variables
+Create `.env` file:
+```
+MONGO_URI=mongodb://localhost:27017
+MONGO_DB=mcp_database
+```
 
-- Thanks to the Streamlit community for their support and resources.
-- Special thanks to all contributors who help improve this project.
-=======
-# prompt-runner
-Streamlit Prompt Runner is a lightweight, interactive web app built with Streamlit that allows users to input prompts, automatically generate structured JSON specifications using an integrated Design Agent, and visualize, log, and manage previous prompts with ease. 
->>>>>>> 7114d4a9187792caa3991904e8f2a6a3eb072316
+---
+
+## 📚 Documentation
+
+- `QUICK_START.md` - Quick reference guide
+- `FRONTEND_GUIDE.md` - Frontend user guide
+- `TEST_RESULTS.md` - Testing documentation
+- `tests/README.md` - Test suite guide
+
+---
+
+## 🤝 Contributing
+
+Contributions welcome! Please:
+1. Run tests before submitting
+2. Follow existing code style
+3. Update documentation
+4. Add tests for new features
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 🎉 Acknowledgments
+
+Built with:
+- Streamlit
+- Flask
+- MongoDB
+- Three.js
+- Trimesh
+- Pytest
+
+---
+
+**Status**: ✅ Production Ready  
+**Version**: 2.0  
+**Last Updated**: November 5, 2025

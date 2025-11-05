@@ -3,3 +3,10 @@ numpy
 pandas
 jsonschema
 requests
+trimesh
+pymongo
+python-dotenv
+flask
+pytest
+pytest-cov
+pytest-mock

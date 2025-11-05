@@ -1,0 +1,284 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-05T09:16:52.168867Z",
+    "version": "2.0",
+    "system": "DCR Compliance Platform"
+  },
+  "statistics": {
+    "total_prompts": 12,
+    "total_actions": 22,
+    "total_rl_feedback": 8
+  },
+  "logs": {
+    "prompts": [
+      {
+        "id": "20251012161327",
+        "prompt": "make a car",
+        "spec_filename": "20251012161327.json",
+        "timestamp": "2025-10-12T16:13:27.098509Z"
+      },
+      {
+        "id": "20251015131241",
+        "prompt": "make a boat",
+        "spec_filename": "20251015131241.json",
+        "timestamp": "2025-10-15T13:12:41.527998Z"
+      },
+      {
+        "id": "20251016114613",
+        "prompt": "make a car ",
+        "spec_filename": "20251016114613.json",
+        "timestamp": "2025-10-16T11:46:13.413479Z"
+      },
+      {
+        "id": "20251016115207",
+        "prompt": "var",
+        "spec_filename": "20251016115207.json",
+        "timestamp": "2025-10-16T11:52:07.402323Z"
+      },
+      {
+        "id": "20251016121622",
+        "prompt": "car",
+        "spec_filename": "20251016121622.json",
+        "timestamp": "2025-10-16T12:16:22.839492Z"
+      },
+      {
+        "id": "20251023034743",
+        "prompt": "TSLA",
+        "spec_filename": "20251023034743.json",
+        "timestamp": "2025-10-23T03:47:43.050313Z"
+      },
+      {
+        "id": "20251024082112",
+        "prompt": "uh",
+        "spec_filename": "20251024082112.json",
+        "timestamp": "2025-10-24T08:21:12.422759Z"
+      },
+      {
+        "id": "20251024085008",
+        "prompt": "hun",
+        "spec_filename": "20251024085008.json",
+        "timestamp": "2025-10-24T08:50:08.637856Z"
+      },
+      {
+        "id": "20251105060826",
+        "prompt": "hcjhds",
+        "spec_filename": "20251105060826.json",
+        "timestamp": "2025-11-05T06:08:26.667386Z"
+      },
+      {
+        "id": "20251105073150",
+        "prompt": "Design a 5-story residential building in Mumbai",
+        "spec_filename": "20251105073150.json",
+        "timestamp": "2025-11-05T07:31:50.498875Z"
+      },
+      {
+        "id": "20251105080940",
+        "prompt": "sdsd",
+        "spec_filename": "20251105080940.json",
+        "timestamp": "2025-11-05T08:09:40.706638Z"
+      },
+      {
+        "id": "20251105090850",
+        "prompt": "buildings",
+        "spec_filename": "20251105090850.json",
+        "timestamp": "2025-11-05T09:08:50.482266Z"
+      }
+    ],
+    "actions": [
+      {
+        "timestamp": "2025-10-12T16:02:31.533394Z",
+        "action": "send_to_evaluator",
+        "spec_id": "f01ce386",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:02:31.571921Z",
+        "action": "send_to_unreal",
+        "spec_id": "f01ce386",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:02:53.326732Z",
+        "action": "send_to_evaluator",
+        "spec_id": "7daac6ed",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:02:55.000584Z",
+        "action": "send_to_unreal",
+        "spec_id": "7daac6ed",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:03:27.962022Z",
+        "action": "send_to_evaluator",
+        "spec_id": "f01ce386",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:03:29.346009Z",
+        "action": "send_to_unreal",
+        "spec_id": "f01ce386",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:03:33.165002Z",
+        "action": "send_to_evaluator",
+        "spec_id": "bac9dd6e",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:03:33.195982Z",
+        "action": "send_to_unreal",
+        "spec_id": "bac9dd6e",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:03:55.956321Z",
+        "action": "send_to_evaluator",
+        "spec_id": "4acb92c2",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:03:55.987243Z",
+        "action": "send_to_unreal",
+        "spec_id": "4acb92c2",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:13:32.547377Z",
+        "action": "send_to_evaluator",
+        "spec_id": "20251012161327",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-12T16:13:33.926065Z",
+        "action": "send_to_unreal",
+        "spec_id": "20251012161327",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-15T13:13:13.849358Z",
+        "action": "send_to_evaluator",
+        "spec_id": "20251012161327",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-15T13:13:16.072229Z",
+        "action": "send_to_unreal",
+        "spec_id": "20251012161327",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-16T11:46:38.551955Z",
+        "action": "send_to_evaluator",
+        "spec_id": "20251015131241",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-21T08:05:18.238057Z",
+        "action": "send_to_evaluator",
+        "spec_id": "20251016114613",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-23T03:47:58.402655Z",
+        "action": "send_to_evaluator",
+        "spec_id": "20251012161327",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-23T03:48:01.717458Z",
+        "action": "send_to_unreal",
+        "spec_id": "20251012161327",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-23T03:48:46.291530Z",
+        "action": "send_to_evaluator",
+        "spec_id": "20251023034743",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-10-23T03:48:48.431726Z",
+        "action": "send_to_unreal",
+        "spec_id": "20251023034743",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-11-05T07:23:27.958080Z",
+        "action": "send_to_evaluator",
+        "spec_id": "20251012161327",
+        "details": {}
+      },
+      {
+        "timestamp": "2025-11-05T07:23:32.188448Z",
+        "action": "send_to_unreal",
+        "spec_id": "20251012161327",
+        "details": {}
+      }
+    ],
+    "rl_training": [
+      {
+        "case_id": "case_123",
+        "feedback": "up",
+        "reward": 2,
+        "meta": {},
+        "timestamp": "2025-11-05T05:36:31.667279Z"
+      },
+      {
+        "case_id": "case_456",
+        "feedback": "down",
+        "reward": -2,
+        "meta": {},
+        "timestamp": "2025-11-05T05:36:31.667279Z"
+      },
+      {
+        "case_id": "case_123",
+        "feedback": "up",
+        "reward": 2,
+        "meta": {
+          "test": "data"
+        },
+        "timestamp": "2025-11-05T05:36:32.383549Z"
+      },
+      {
+        "case_id": "case_456",
+        "feedback": "down",
+        "reward": -2,
+        "meta": {},
+        "timestamp": "2025-11-05T05:36:32.411075Z"
+      },
+      {
+        "case_id": "case_123",
+        "feedback": "up",
+        "reward": 2,
+        "meta": {},
+        "timestamp": "2025-11-05T05:59:53.619626Z"
+      },
+      {
+        "case_id": "case_456",
+        "feedback": "down",
+        "reward": -2,
+        "meta": {},
+        "timestamp": "2025-11-05T05:59:53.639851Z"
+      },
+      {
+        "case_id": "case_123",
+        "feedback": "up",
+        "reward": 2,
+        "meta": {
+          "test": "data"
+        },
+        "timestamp": "2025-11-05T05:59:59.076901Z"
+      },
+      {
+        "case_id": "case_456",
+        "feedback": "down",
+        "reward": -2,
+        "meta": {},
+        "timestamp": "2025-11-05T05:59:59.199837Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "case_id": "case_123",
+    "feedback": "up",
+    "reward": 2,
+    "meta": {},
+    "timestamp": "2025-11-05T05:36:31.667279Z"
+  },
+  {
+    "case_id": "case_456",
+    "feedback": "down",
+    "reward": -2,
+    "meta": {},
+    "timestamp": "2025-11-05T05:36:31.667279Z"
+  },
+  {
+    "case_id": "case_123",
+    "feedback": "up",
+    "reward": 2,
+    "meta": {
+      "test": "data"
+    },
+    "timestamp": "2025-11-05T05:36:32.383549Z"
+  },
+  {
+    "case_id": "case_456",
+    "feedback": "down",
+    "reward": -2,
+    "meta": {},
+    "timestamp": "2025-11-05T05:36:32.411075Z"
+  },
+  {
+    "case_id": "case_123",
+    "feedback": "up",
+    "reward": 2,
+    "meta": {},
+    "timestamp": "2025-11-05T05:59:53.619626Z"
+  },
+  {
+    "case_id": "case_456",
+    "feedback": "down",
+    "reward": -2,
+    "meta": {},
+    "timestamp": "2025-11-05T05:59:53.639851Z"
+  },
+  {
+    "case_id": "case_123",
+    "feedback": "up",
+    "reward": 2,
+    "meta": {
+      "test": "data"
+    },
+    "timestamp": "2025-11-05T05:59:59.076901Z"
+  },
+  {
+    "case_id": "case_456",
+    "feedback": "down",
+    "reward": -2,
+    "meta": {},
+    "timestamp": "2025-11-05T05:59:59.199837Z"
+  }
+]
